@@ -7,6 +7,7 @@ import { AngularMaterialImportsModule } from './angular-material-imports/angular
     AngularMaterialImportsModule,
     BrowserAnimationsModule
   ],
+  exports: [AngularMaterialImportsModule],
   declarations: []
 })
 export class AppCoreModule { }
