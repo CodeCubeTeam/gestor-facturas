@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app-facturas';
+  title = 'gestor-facturas';
   constructor(
     private router: Router
   ) {}
