@@ -6,13 +6,17 @@ import { FormFacturasComponent } from './components/form-facturas/form-facturas.
 import { AppRouting } from './app.routing';
 import { AppCoreModule } from './app-core/app-core.module';
 import { NavFacturasComponent } from './components/nav-facturas/nav-facturas.component';
+import { FormUserDataComponent } from './components/form-user-data/form-user-data.component';
+import { FormClientDataComponent } from './components/form-client-data/form-client-data.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FormFacturasComponent,
-    NavFacturasComponent
+    NavFacturasComponent,
+    FormUserDataComponent,
+    FormClientDataComponent
   ],
   imports: [
     BrowserModule,

@@ -1,23 +1,26 @@
 <div fxLayout="row" fxLayoutAlign="center center" class="form-wrapp">
   <div class="form-container">
-    <app-form-client-data></app-form-client-data>
-    <br>
-    <div class="example-container">
+    <div fxLayout="row" fxLayoutAlign="space-evenly center" >
       <mat-form-field appearance="outline">
-        <mat-label>Standard form field</mat-label>
-        <input matInput placeholder="Input">
+        <mat-label>Name</mat-label>
+        <input matInput>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Standard form field</mat-label>
-        <textarea matInput placeholder="Textarea"></textarea>
+        <mat-label>First surname</mat-label>
+        <input matInput>
       </mat-form-field>
 
-      <mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Second surname</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <!-- <mat-form-field>
         <mat-select placeholder="Select" appearance="outline">
           <mat-option value="option">Option</mat-option>
         </mat-select>
-      </mat-form-field>
+      </mat-form-field> -->
     </div>
   </div>
 </div>
