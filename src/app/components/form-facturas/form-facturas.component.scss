@@ -6,13 +6,16 @@
     height: 75vh;
     width: 75vw;
     padding: 2em;
+    display: flex;
+    mat-form-field{
+      width: 100%;
+      margin: 0 10px;
+    }
   }
-  .example-container {
+  .form-one, .form-two {
     display: flex;
     flex-direction: column;
-  }
-
-  .example-container > * {
     width: 100%;
+    margin: 0 10px;
   }
 }
