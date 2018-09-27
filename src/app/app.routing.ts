@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FormFacturasComponent } from './components/form-facturas/form-facturas.component';
+import { InvoiceWrappComponent } from './features/invoices/invoice-wrapp/invoice-wrapp.component';
 
 // Pages (Static)
 
@@ -14,7 +14,7 @@ import { FormFacturasComponent } from './components/form-facturas/form-facturas.
 const routes: Routes = [
   {
     path: '',
-    component: FormFacturasComponent
+    component: InvoiceWrappComponent
   }
 ];
 

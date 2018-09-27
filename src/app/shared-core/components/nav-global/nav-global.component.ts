@@ -3,11 +3,11 @@ import { MediaMatcher } from '@angular/cdk/layout';
 
 
 @Component({
-  selector: 'app-nav-facturas',
-  templateUrl: './nav-facturas.component.html',
-  styleUrls: ['./nav-facturas.component.scss']
+  selector: 'app-nav-global',
+  templateUrl: './nav-global.component.html',
+  styleUrls: ['./nav-global.component.scss']
 })
-export class NavFacturasComponent implements OnInit {
+export class NavGlobalComponent implements OnInit {
 
   mobileQuery: MediaQueryList;
 

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ComponentsComponent } from './components.component';
+import { InvoiceWrappComponent } from './invoice-wrapp.component';
 
-describe('ComponentsComponent', () => {
-  let component: ComponentsComponent;
-  let fixture: ComponentFixture<ComponentsComponent>;
+describe('InvoiceWrappComponent', () => {
+  let component: InvoiceWrappComponent;
+  let fixture: ComponentFixture<InvoiceWrappComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ComponentsComponent ]
+      declarations: [ InvoiceWrappComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ComponentsComponent);
+    fixture = TestBed.createComponent(InvoiceWrappComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
