@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { FormFacturasComponent } from './components/form-facturas/form-facturas.component';
 import { AppRouting } from './app.routing';
 import { AppCoreModule } from './app-core/app-core.module';
+import { NavFacturasComponent } from './components/nav-facturas/nav-facturas.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormFacturasComponent
+    FormFacturasComponent,
+    NavFacturasComponent
   ],
   imports: [
     BrowserModule,
