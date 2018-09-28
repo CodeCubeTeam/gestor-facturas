@@ -49,16 +49,12 @@ export class InvoiceFormComponent implements OnInit {
   ];
   displayedColumns = ['item', 'quantity', 'cost'];
   transactions: Transaction[] = [
-    {
-      item: 'Beach ball',
-      quantity: this.quantities.viewValue,
-      cost: 4
-    },
-    { item: 'Towel', cost: 5 },
-    { item: 'Frisbee', cost: 2 },
-    { item: 'Sunscreen', cost: 4 },
-    { item: 'Cooler', cost: 25 },
-    { item: 'Swim suit', cost: 15 }
+    { item: 'Beach ball', cost: 4, quantity: this.quantities[0].viewValue },
+    { item: 'Towel', cost: 5, quantity: this.quantities[0].viewValue },
+    { item: 'Frisbee', cost: 2, quantity: this.quantities[0].viewValue },
+    { item: 'Sunscreen', cost: 4, quantity: this.quantities[0].viewValue },
+    { item: 'Cooler', cost: 25, quantity: this.quantities[0].viewValue },
+    { item: 'Swim suit', cost: 15, quantity: this.quantities[0].viewValue }
   ];
 
   /** Gets the total cost of all transactions. */
