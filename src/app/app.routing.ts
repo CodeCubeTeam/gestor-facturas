@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { InvoiceWrappComponent } from './features/invoices/invoice-wrapp/invoice-wrapp.component';
+import { InvoiceWrappComponent } from './features/invoices/components/invoice-wrapp/invoice-wrapp.component';
 
 // Pages (Static)
 

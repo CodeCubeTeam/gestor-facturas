@@ -4,28 +4,28 @@
       <mat-form-field>
         <mat-select placeholder="Select item">
           <mat-option *ngFor="let item of items" [value]="item.value">
-            {{item.viewValue}}
+            {{item.label}}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field>
         <mat-select placeholder="Select quantity">
           <mat-option *ngFor="let quantity of quantitys" [value]="quantity.value">
-            {{quantity.viewValue}}
+            {{quantity.label}}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <!-- <mat-form-field>
         <mat-select placeholder="Discount quantity">
           <mat-option *ngFor="let discount of discounts" [value]="discount.value">
-            {{discount.viewValue}}
+            {{discount.label}}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field>
         <mat-select placeholder="Recharge quantity">
           <mat-option *ngFor="let recharge of recharges" [value]="recharge.value">
-            {{recharge.viewValue}}
+            {{recharge.label}}
           </mat-option>
         </mat-select>
       </mat-form-field> -->
