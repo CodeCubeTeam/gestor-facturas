@@ -1,6 +1,7 @@
 <div fxLayout="row" fxLayoutAlign="center center" class="form-wrapp">
   <div class="form-container">
-    <div class="form-one">
+    <div class="form-one" fxLayout="row">
+      <!-- Select item -->
       <mat-form-field>
         <mat-select placeholder="Select item">
           <mat-option *ngFor="let item of items" [value]="item.value">
@@ -8,6 +9,7 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
+      <!-- Select quantity -->
       <mat-form-field>
         <mat-select placeholder="Select quantity">
           <mat-option *ngFor="let quantity of quantitys" [value]="quantity.value">
@@ -15,26 +17,67 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <!-- <mat-form-field>
-        <mat-select placeholder="Discount quantity">
-          <mat-option *ngFor="let discount of discounts" [value]="discount.value">
-            {{discount.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-select placeholder="Recharge quantity">
-          <mat-option *ngFor="let recharge of recharges" [value]="recharge.value">
-            {{recharge.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field> -->
     </div>
     <div class="form-two">
+      <!-- Description -->
       <mat-form-field appearance="outline">
         <mat-label>Item description (optional)</mat-label>
         <textarea matInput placeholder="Write a description"></textarea>
       </mat-form-field>
+    </div>
+    <div class="form-three">
+      <div class="example-container mat-elevation-z8">
+        <table mat-table [dataSource]="transactions">
+          <!-- Item Column -->
+          <ng-container matColumnDef="item">
+            <th mat-header-cell *matHeaderCellDef> Item </th>
+            <td mat-cell *matCellDef="let transaction"> {{transaction.item}} </td>
+            <td mat-footer-cell *matFooterCellDef> Total </td>
+          </ng-container>
+          <!-- Quantity Column -->
+          <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef> Quantity </th>
+            <td mat-cell *matCellDef="let transaction"> {{transaction.item}} </td>
+          </ng-container>
+          <!-- Discount Column -->
+          <ng-container matColumnDef="discount">
+            <th mat-header-cell *matHeaderCellDef> Discount </th>
+            <td mat-cell *matCellDef="let transaction">
+              <mat-form-field>
+                <mat-select placeholder="Discount quantity">
+                  <mat-option *ngFor="let discount of discounts" [value]="discount.value">
+                    {{discount.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </ng-container>
+          <!-- Recharge Column -->
+          <ng-container matColumnDef="recharge">
+            <th mat-header-cell *matHeaderCellDef> Recharge </th>
+            <td mat-cell *matCellDef="let transaction">
+              <mat-form-field>
+                <mat-select placeholder="Recharge quantity">
+                  <mat-option *ngFor="let recharge of recharges" [value]="recharge.value">
+                    {{recharge.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </ng-container>
+
+          <!-- Cost Column -->
+          <ng-container matColumnDef="cost">
+            <th mat-header-cell *matHeaderCellDef> Cost </th>
+            <td mat-cell *matCellDef="let transaction"> {{transaction.cost | currency}} </td>
+            <td mat-footer-cell *matFooterCellDef> {{getTotalCost() | currency}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
+        </table>
+      </div>
     </div>
   </div>
 </div>
