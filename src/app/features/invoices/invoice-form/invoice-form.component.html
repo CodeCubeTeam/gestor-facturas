@@ -1,25 +1,40 @@
-<div class="invoice-container">
-  <div class="form-one">
-    <mat-form-field>
-      <mat-select placeholder="Select item">
-        <mat-option *ngFor="let item of items" [value]="item.value">
+<div fxLayout="row" fxLayoutAlign="center center" class="form-wrapp">
+  <div class="form-container">
+    <div class="form-one">
+      <mat-form-field>
+        <mat-select placeholder="Select item">
+          <mat-option *ngFor="let item of items" [value]="item.value">
             {{item.viewValue}}
           </mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-select placeholder="Select quantity">
-        <mat-option *ngFor="let quantity of quantitys" [value]="quantity.value">
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Select quantity">
+          <mat-option *ngFor="let quantity of quantitys" [value]="quantity.value">
             {{quantity.viewValue}}
           </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-  <div class="form-two">
-    <mat-form-field appearance="outline">
-      <mat-label>Item description (optional)</mat-label>
-      <textarea matInput placeholder="Textarea"></textarea>
-    </mat-form-field>
+        </mat-select>
+      </mat-form-field>
+      <!-- <mat-form-field>
+        <mat-select placeholder="Discount quantity">
+          <mat-option *ngFor="let discount of discounts" [value]="discount.value">
+            {{discount.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Recharge quantity">
+          <mat-option *ngFor="let recharge of recharges" [value]="recharge.value">
+            {{recharge.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+    </div>
+    <div class="form-two">
+      <mat-form-field appearance="outline">
+        <mat-label>Item description (optional)</mat-label>
+        <textarea matInput placeholder="Write a description"></textarea>
+      </mat-form-field>
+    </div>
   </div>
 </div>
