@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
 import { SharedCoreModule } from './shared-core/shared-core.module';
+import { InvoicesModule } from './features/invoices/invoices.module';
 
 
 @NgModule({
@@ -12,8 +13,8 @@ import { SharedCoreModule } from './shared-core/shared-core.module';
   ],
   imports: [
     BrowserModule,
-    AppRouting,
-    SharedCoreModule
+    SharedCoreModule,
+    InvoicesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
