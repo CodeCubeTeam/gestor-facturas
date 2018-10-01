@@ -9,17 +9,19 @@ export interface Quantity {
   viewValue: string;
 }
 export interface Discount {
-  value: string;
-  viewValue: string;
+  value: any;
+  viewValue: any;
 }
 export interface Recharge {
-  value: string;
-  viewValue: string;
+  value: any;
+  viewValue: any;
 }
 export interface Transaction {
   item: string;
   cost: number;
   quantity: any;
+  recharge: number;
+  discount: number;
 }
 @Component({
   selector: 'app-invoice-form',
@@ -38,23 +40,59 @@ export class InvoiceFormComponent implements OnInit {
     { value: '3', viewValue: '3' }
   ];
   discounts: Discount[] = [
-    { value: '1', viewValue: 'discount1' },
-    { value: '2', viewValue: 'discount2' },
-    { value: '3', viewValue: 'discount3' }
+    { value: '1', viewValue: '1' },
+    { value: '2', viewValue: '2' },
+    { value: '3', viewValue: '3' }
   ];
   recharges: Recharge[] = [
-    { value: '1', viewValue: 'recharge1' },
-    { value: '2', viewValue: 'recharge2' },
-    { value: '3', viewValue: 'recharge3' }
+    { value: '1', viewValue: '1' },
+    { value: '2', viewValue: '2' },
+    { value: '3', viewValue: '3' }
   ];
-  displayedColumns = ['item', 'quantity', 'cost'];
+  displayedColumns = ['item', 'quantity', 'cost', 'recharge', 'discount'];
   transactions: Transaction[] = [
-    { item: 'Beach ball', cost: 4, quantity: this.quantities[0].viewValue },
-    { item: 'Towel', cost: 5, quantity: this.quantities[0].viewValue },
-    { item: 'Frisbee', cost: 2, quantity: this.quantities[0].viewValue },
-    { item: 'Sunscreen', cost: 4, quantity: this.quantities[0].viewValue },
-    { item: 'Cooler', cost: 25, quantity: this.quantities[0].viewValue },
-    { item: 'Swim suit', cost: 15, quantity: this.quantities[0].viewValue }
+    {
+      item: 'Beach ball',
+      cost: 4,
+      quantity: this.quantities[0].viewValue,
+      recharge: this.recharges[0].viewValue,
+      discount: this.discounts[0].viewValue
+    },
+    {
+      item: 'Towel',
+      cost: 5,
+      quantity: this.quantities[0].viewValue,
+      recharge: this.recharges[0].viewValue,
+      discount: this.discounts[0].viewValue
+    },
+    {
+      item: 'Frisbee',
+      cost: 2,
+      quantity: this.quantities[0].viewValue,
+      recharge: this.recharges[0].viewValue,
+      discount: this.discounts[0].viewValue
+    },
+    {
+      item: 'Sunscreen',
+      cost: 4,
+      quantity: this.quantities[0].viewValue,
+      recharge: this.recharges[0].viewValue,
+      discount: this.discounts[0].viewValue
+    },
+    {
+      item: 'Cooler',
+      cost: 25,
+      quantity: this.quantities[0].viewValue,
+      recharge: this.recharges[0].viewValue,
+      discount: this.discounts[0].viewValue
+    },
+    {
+      item: 'Swim suit',
+      cost: 15,
+      quantity: this.quantities[0].viewValue,
+      recharge: this.recharges[0].viewValue,
+      discount: this.discounts[0].viewValue
+    }
   ];
 
   /** Gets the total cost of all transactions. */
