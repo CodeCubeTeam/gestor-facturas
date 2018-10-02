@@ -1,0 +1,16 @@
+.form-wrapp{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .form-container{
+    width: 80vw;
+    .form-one, .form-two, .form-three{
+      mat-form-field{
+        width: 100%;
+        margin: 0 10px;
+      }
+    }
+  }
+}
