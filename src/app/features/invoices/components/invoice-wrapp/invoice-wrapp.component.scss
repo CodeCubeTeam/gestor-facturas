@@ -1,18 +1,11 @@
 .form-wrapp{
-  background-color: rgb(233, 233, 233);
-  height: 100vh;
   .form-container{
-    background-color: #FFF;
-    height: 75vh;
-    width: 75vw;
-    padding: 2em;
-  }
-  .example-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .example-container > * {
     width: 100%;
+    .form-one, .form-two{
+      mat-form-field{
+        width: 100%;
+        margin: 0 10px;
+      }
+    }
   }
 }

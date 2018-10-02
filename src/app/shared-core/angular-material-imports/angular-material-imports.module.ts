@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule, MatCheckboxModule, MatGridListModule, MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatGridListModule, MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatTableModule } from '@angular/material';
 
 @NgModule({
   imports: [MatButtonModule,
@@ -13,7 +13,8 @@ import { MatButtonModule, MatCheckboxModule, MatGridListModule, MatSidenavModule
             FlexLayoutModule,
             MatFormFieldModule,
             MatInputModule,
-            MatSelectModule
+            MatSelectModule,
+            MatTableModule
           ],
 
   exports: [MatButtonModule,
@@ -26,7 +27,8 @@ import { MatButtonModule, MatCheckboxModule, MatGridListModule, MatSidenavModule
             FlexLayoutModule,
             MatFormFieldModule,
             MatInputModule,
-            MatSelectModule
+            MatSelectModule,
+            MatTableModule
           ]
 })
 export class AngularMaterialImportsModule {}
