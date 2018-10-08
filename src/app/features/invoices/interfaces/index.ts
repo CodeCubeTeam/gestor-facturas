@@ -3,3 +3,4 @@ export * from './item.interface';
 export * from './quantity.interface';
 export * from './surcharge.interface';
 export * from './transaction.interface';
+export * from './cost.interface';

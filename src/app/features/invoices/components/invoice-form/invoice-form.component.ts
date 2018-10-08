@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Item, Quantity, Discount, Surcharge, Transaction } from '../../interfaces';
+import {
+  Item,
+  Quantity,
+  Discount,
+  Surcharge,
+  Transaction,
+  Cost
+} from '../../interfaces';
 
 @Component({
   selector: 'app-invoice-form',
@@ -11,6 +18,11 @@ export class InvoiceFormComponent implements OnInit {
     { value: 'items-0', label: 'Items1' },
     { value: 'items-1', label: 'Items2' },
     { value: 'items-2', label: 'Items3' }
+  ];
+  costs: Cost[] = [
+    { value: 'cost-0', label: this.items[0].label },
+    { value: 'cost-1', label: this.items[0].label },
+    { value: 'cost-2', label: this.items[0].label }
   ];
   quantities: Quantity[] = [
     { value: '1', label: '1' },
@@ -27,47 +39,12 @@ export class InvoiceFormComponent implements OnInit {
     { value: '2', label: '2' },
     { value: '3', label: '3' }
   ];
-  displayedColumns = ['item', 'quantity', 'cost', 'surcharge', 'discount'];
+  displayedColumns = ['item', 'quantity', 'surcharge', 'discount', 'cost'];
 
   transactions: Transaction[] = [
     {
-      item: 'Beach ball',
-      cost: 4,
-      quantity: this.quantities[0].label,
-      surcharge: this.surcharges[0].label,
-      discount: this.discounts[0].label
-    },
-    {
-      item: 'Towel',
-      cost: 5,
-      quantity: this.quantities[0].label,
-      surcharge: this.surcharges[0].label,
-      discount: this.discounts[0].label
-    },
-    {
-      item: 'Frisbee',
-      cost: 2,
-      quantity: this.quantities[0].label,
-      surcharge: this.surcharges[0].label,
-      discount: this.discounts[0].label
-    },
-    {
-      item: 'Sunscreen',
-      cost: 4,
-      quantity: this.quantities[0].label,
-      surcharge: this.surcharges[0].label,
-      discount: this.discounts[0].label
-    },
-    {
-      item: 'Cooler',
-      cost: 25,
-      quantity: this.quantities[0].label,
-      surcharge: this.surcharges[0].label,
-      discount: this.discounts[0].label
-    },
-    {
-      item: 'Swim suit',
-      cost: 15,
+      item: this.items[0].label,
+      cost: this.costs[0].label,
       quantity: this.quantities[0].label,
       surcharge: this.surcharges[0].label,
       discount: this.discounts[0].label
@@ -80,7 +57,7 @@ export class InvoiceFormComponent implements OnInit {
       .map(t => t.cost)
       .reduce((acc, value) => acc + value, 0);
   }
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 }

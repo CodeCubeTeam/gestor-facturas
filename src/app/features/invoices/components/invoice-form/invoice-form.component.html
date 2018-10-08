@@ -1,5 +1,9 @@
 <div fxLayout="row" fxLayoutAlign="center center" class="form-wrapp">
   <div class="form-container">
+    <div class="form-info-client">
+      <app-form-user-data></app-form-user-data>
+      <app-form-client-data></app-form-client-data>
+    </div>
     <div class="form-one" fxLayout="row">
       <!-- Select item -->
       <mat-form-field>
@@ -17,6 +21,20 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
+      <mat-form-field>
+          <mat-select placeholder="Select discount">
+            <mat-option *ngFor="let discount of discounts" [value]="discount.value">
+              {{discount.label}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select placeholder="Select surcharge">
+              <mat-option *ngFor="let surcharge of surcharges" [value]="surcharge.value">
+                {{surcharge.label}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
     </div>
     <div class="form-two">
       <!-- Description -->
@@ -26,47 +44,35 @@
       </mat-form-field>
     </div>
     <div class="form-three">
-      <div class="example-container mat-elevation-z8">
+
+      <!-- <div class="example-container mat-elevation-z8">
         <table mat-table [dataSource]="transactions">
-          <!-- Item Column -->
+
           <ng-container matColumnDef="item">
             <th mat-header-cell *matHeaderCellDef> Item </th>
             <td mat-cell *matCellDef="let transaction"> {{transaction.item}} </td>
-            <td mat-footer-cell *matFooterCellDef> Total </td>
-          </ng-container>
-          <!-- Quantity Column -->
-          <ng-container matColumnDef="quantity">
-            <th mat-header-cell *matHeaderCellDef> Quantity </th>
-            <td mat-cell *matCellDef="let transaction"> {{transaction.item}} </td>
-          </ng-container>
-          <!-- Discount Column -->
-          <ng-container matColumnDef="discount">
-            <th mat-header-cell *matHeaderCellDef> Discount </th>
-            <td mat-cell *matCellDef="let transaction">
-              <mat-form-field>
-                <mat-select placeholder="Discount quantity">
-                  <mat-option *ngFor="let discount of discounts" [value]="discount.value">
-                    {{discount.label}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </td>
-          </ng-container>
-          <!-- surcharge Column -->
-          <ng-container matColumnDef="surcharge">
-            <th mat-header-cell *matHeaderCellDef> surcharge </th>
-            <td mat-cell *matCellDef="let transaction">
-              <mat-form-field>
-                <mat-select placeholder="surcharge quantity">
-                  <mat-option *ngFor="let surcharge of surcharges" [value]="surcharge.value">
-                    {{surcharge.label}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </td>
           </ng-container>
 
-          <!-- Cost Column -->
+
+          <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef> Quantity </th>
+            <td mat-cell *matCellDef="let transaction"> {{transaction.quantity | currency}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="discount">
+            <th mat-header-cell *matHeaderCellDef> Discount </th>
+            <td mat-cell *matCellDef="let transaction"> {{transaction.discount | currency}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="surcharge">
+            <th mat-header-cell *matHeaderCellDef> Surcharge </th>
+            <td mat-cell *matCellDef="let transaction"> {{transaction.surcharge | currency}} </td>
+            <td mat-footer-cell *matFooterCellDef> Total </td>
+          </ng-container>
+
+
           <ng-container matColumnDef="cost">
             <th mat-header-cell *matHeaderCellDef> Cost </th>
             <td mat-cell *matCellDef="let transaction"> {{transaction.cost | currency}} </td>
@@ -77,7 +83,8 @@
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
         </table>
-      </div>
+      </div> -->
+
     </div>
   </div>
 </div>
