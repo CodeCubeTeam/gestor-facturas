@@ -3,6 +3,7 @@ import { SharedGlobalModule } from '../../shared-global/shared-global.module';
 import { SharedCoreModule } from '../../shared-core/shared-core.module';
 import { InvoiceWrappComponent } from './components/invoice-wrapp/invoice-wrapp.component';
 import { InvoiceFormComponent } from './components/invoice-form/invoice-form.component';
+import { InvoiceTableComponent } from './components/invoice-table/invoice-table.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { InvoiceFormComponent } from './components/invoice-form/invoice-form.com
   ],
   declarations: [
     InvoiceWrappComponent,
-    InvoiceFormComponent
+    InvoiceFormComponent,
+    InvoiceTableComponent
   ],
   exports: [
     InvoiceWrappComponent,

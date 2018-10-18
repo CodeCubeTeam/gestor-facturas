@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <div class="form-container">
   <div class="form-one" fxLayout="row">
     <!-- Select item -->
@@ -80,5 +81,60 @@
         </table>
       </div> -->
 
+=======
+<div fxLayout="row" fxLayoutAlign="center center" class="form-wrapp">
+  <div class="form-container">
+    <div class="form-info-client">
+      <app-form-user-data></app-form-user-data>
+      <!-- <app-form-client-data></app-form-client-data> -->
+    </div>
+    <div class="form-one" fxLayout="row">
+      <!-- Select item -->
+      <mat-form-field>
+        <mat-select placeholder="Select item">
+          <mat-option *ngFor="let item of items" [value]="item.value">
+            {{item.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- Select quantity -->
+      <mat-form-field>
+        <mat-select placeholder="Select quantity">
+          <mat-option *ngFor="let quantity of quantities" [value]="quantity.value">
+            {{quantity.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- Select discount -->
+      <mat-form-field>
+        <mat-select placeholder="Select discount">
+          <mat-option *ngFor="let discount of discounts" [value]="discount.value">
+            {{discount.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- Select surcharge -->
+      <mat-form-field>
+        <mat-select placeholder="Select surcharge">
+          <mat-option *ngFor="let surcharge of surcharges" [value]="surcharge.value">
+            {{surcharge.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="form-two">
+      <!-- Description -->
+      <mat-form-field appearance="outline">
+        <mat-label>Item description (optional)</mat-label>
+        <textarea matInput placeholder="Write a description"></textarea>
+      </mat-form-field>
+    </div>
+    <div class="form-three">
+    </div>
+    <app-invoice-table></app-invoice-table>
+    <mat-grid-list cols="1" rowHeight="4:1">
+      <p class="total"><b>Total:</b></p>
+    </mat-grid-list>
+>>>>>>> Stashed changes
   </div>
 </div>

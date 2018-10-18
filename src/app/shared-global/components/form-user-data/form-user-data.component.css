@@ -1,0 +1,12 @@
+.mat-card-avatar{
+  height: 150px;
+  width: 150px;
+}
+.mat-grid-list .mat-grid-tile .mat-card{
+  width: 100%;
+  margin: 0.5em;
+}
+.mat-grid-list .mat-grid-tile .mat-card .mat-card-header{
+  display: flex;
+  align-items: center;
+}

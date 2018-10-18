@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule, MatCheckboxModule, MatGridListModule, MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatTableModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatGridListModule, MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatTableModule, MatCardModule } from '@angular/material';
+import { CdkTableModule } from '@angular/cdk/table';
 
 @NgModule({
   imports: [MatButtonModule,
@@ -14,7 +15,9 @@ import { MatButtonModule, MatCheckboxModule, MatGridListModule, MatSidenavModule
             MatFormFieldModule,
             MatInputModule,
             MatSelectModule,
-            MatTableModule
+            MatTableModule,
+            MatCardModule,
+            CdkTableModule
           ],
 
   exports: [MatButtonModule,
@@ -28,7 +31,9 @@ import { MatButtonModule, MatCheckboxModule, MatGridListModule, MatSidenavModule
             MatFormFieldModule,
             MatInputModule,
             MatSelectModule,
-            MatTableModule
+            MatTableModule,
+            MatCardModule,
+            CdkTableModule
           ]
 })
 export class AngularMaterialImportsModule {}

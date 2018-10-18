@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormUserDataComponent implements OnInit {
 
+  cards = [1, 2]
+
   constructor() { }
 
   ngOnInit() {
