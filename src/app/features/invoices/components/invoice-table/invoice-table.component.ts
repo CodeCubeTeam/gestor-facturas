@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
+
 export interface PeriodicElement {
   name: string;
   position: number;
   cost: number;
   weight: number;
   symbol: string;
+}
+export interface Item {
+  value: string;
+  label: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -27,7 +32,7 @@ export class InvoiceTableComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'cost', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor( ) { }
 
   ngOnInit() {
   }
