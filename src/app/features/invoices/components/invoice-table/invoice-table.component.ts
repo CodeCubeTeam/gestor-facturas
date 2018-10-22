@@ -2,23 +2,19 @@ import { Component, OnInit } from '@angular/core';
 
 
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  cost: number;
-  weight: number;
-  symbol: string;
-}
-export interface Item {
-  value: string;
-  label: string;
+  quantity: any;
+  item: any;
+  cost: any;
+  discount: any;
+  surcharge: any;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', cost: 1, weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', cost: 1, weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', cost: 1, weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', cost: 1, weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', cost: 1, weight: 10.811, symbol: 'B'}
+  {item: 1, quantity: 'Hydrogen', cost: 1, discount: 1.0079, surcharge: 'H'},
+  {item: 2, quantity: 'Helium', cost: 1, discount: 4.0026, surcharge: 'He'},
+  {item: 3, quantity: 'Lithium', cost: 1, discount: 6.941, surcharge: 'Li'},
+  {item: 4, quantity: 'Beryllium', cost: 1, discount: 9.0122, surcharge: 'Be'},
+  {item: 5, quantity: 'Boron', cost: 1, discount: 10.811, surcharge: 'B'}
 ];
 
 @Component({
@@ -28,8 +24,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class InvoiceTableComponent implements OnInit {
 
-
-  displayedColumns: string[] = ['position', 'name', 'cost', 'weight', 'symbol'];
+  displayedColumns: string[] = ['item', 'quantity', 'discount', 'surcharge', 'cost'];
   dataSource = ELEMENT_DATA;
 
   constructor( ) { }

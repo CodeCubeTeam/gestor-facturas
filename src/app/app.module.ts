@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
 import { SharedCoreModule } from './shared-core/shared-core.module';
 import { InvoicesModule } from './features/invoices/invoices.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import { InvoicesModule } from './features/invoices/invoices.module';
   imports: [
     BrowserModule,
     SharedCoreModule,
-    InvoicesModule
+    InvoicesModule,
+    AppRouting,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

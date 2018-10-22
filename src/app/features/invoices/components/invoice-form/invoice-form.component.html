@@ -8,7 +8,7 @@
       <!-- Select item -->
       <mat-form-field>
         <mat-select placeholder="Select item">
-          <mat-option *ngFor="let item of items" [value]="item.value">
+          <mat-option *ngFor="let item of items" [value]="item.value" (click)="recoger(item.value)">
             {{item.label}}
           </mat-option>
         </mat-select>
@@ -16,7 +16,7 @@
       <!-- Select quantity -->
       <mat-form-field>
         <mat-select placeholder="Select quantity">
-          <mat-option *ngFor="let quantity of quantities" [value]="quantity.value">
+          <mat-option *ngFor="let quantity of quantities" [value]="quantity.value" (click)="recoger(quantity.value)">
             {{quantity.label}}
           </mat-option>
         </mat-select>
@@ -24,7 +24,7 @@
       <!-- Select discount -->
       <mat-form-field>
         <mat-select placeholder="Select discount">
-          <mat-option *ngFor="let discount of discounts" [value]="discount.value">
+          <mat-option *ngFor="let discount of discounts" [value]="discount.value" (click)="recoger(discount.value)">
             {{discount.label}}
           </mat-option>
         </mat-select>
@@ -32,7 +32,7 @@
       <!-- Select surcharge -->
       <mat-form-field>
         <mat-select placeholder="Select surcharge">
-          <mat-option *ngFor="let surcharge of surcharges" [value]="surcharge.value">
+          <mat-option *ngFor="let surcharge of surcharges" [value]="surcharge.value" (click)="recoger(surcharge.value)">
             {{surcharge.label}}
           </mat-option>
         </mat-select>

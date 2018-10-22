@@ -1,23 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  Item,
-  Quantity,
-  Discount,
-  Surcharge
-} from '../../interfaces';
+import { Component, OnInit, Input } from '@angular/core';
+import { Item, Quantity, Discount, Surcharge } from '../../interfaces';
 
 @Component({
   selector: 'app-invoice-form',
   templateUrl: './invoice-form.component.html',
   styleUrls: ['./invoice-form.component.scss']
 })
-
 export class InvoiceFormComponent implements OnInit {
 
   public items: Item[] = [
-    { value: 'items-0', label: 'Items1' },
-    { value: 'items-1', label: 'Items2' },
-    { value: 'items-2', label: 'Items3' }
+    { value: 'items-1', label: 'Items1' },
+    { value: 'items-2', label: 'Items2' },
+    { value: 'items-3', label: 'Items3' }
   ];
   public quantities: Quantity[] = [
     { value: '1', label: '1' },
@@ -38,4 +32,8 @@ export class InvoiceFormComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  recoger(value: any) {
+    console.log(value);
+  }
 }
