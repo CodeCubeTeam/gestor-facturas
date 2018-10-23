@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
 import { SharedCoreModule } from './shared-core/shared-core.module';
 import { InvoicesModule } from './features/invoices/invoices.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,9 +17,11 @@ import { FormsModule } from '@angular/forms';
     SharedCoreModule,
     InvoicesModule,
     AppRouting,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports : [ReactiveFormsModule]
 })
 export class AppModule { }
