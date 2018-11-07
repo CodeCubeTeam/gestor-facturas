@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { InvoiceFormComponent } from '../invoice-form/invoice-form.component';
+import { Item, Quantity, Discount, Surcharge } from '../../interfaces';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 export interface PeriodicElement {
@@ -27,7 +30,28 @@ export class InvoiceTableComponent implements OnInit {
   displayedColumns: string[] = ['item', 'quantity', 'discount', 'surcharge', 'cost'];
   dataSource = ELEMENT_DATA;
 
-  constructor( ) { }
+  public items: Item[] = [
+    { value: 'items-1', label: 'Items1' },
+    { value: 'items-2', label: 'Items2' },
+    { value: 'items-3', label: 'Items3' }
+  ];
+  public quantities: Quantity[] = [
+    { value: '1', label: '1' },
+    { value: '2', label: '2' },
+    { value: '3', label: '3' }
+  ];
+  public discounts: Discount[] = [
+    { value: '1', label: '1' },
+    { value: '2', label: '2' },
+    { value: '3', label: '3' }
+  ];
+  public surcharges: Surcharge[] = [
+    { value: '1', label: '1' },
+    { value: '2', label: '2' },
+    { value: '3', label: '3' }
+  ];
+
+  constructor( private invoiceForm: InvoiceFormComponent ) { }
 
   ngOnInit() {
   }
