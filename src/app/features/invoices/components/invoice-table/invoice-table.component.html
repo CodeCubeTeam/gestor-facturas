@@ -65,3 +65,7 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+<mat-grid-list cols="1" rowHeight="4:1" class="b-more">
+  <button class="btn btn-primary" href="javascript:void(0)" (click)="addItem()"><i class="fa fa-plus-circle"></i> ADD
+    NEW ITEM</button>
+</mat-grid-list>

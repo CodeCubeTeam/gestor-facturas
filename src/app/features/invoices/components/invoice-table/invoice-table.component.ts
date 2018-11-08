@@ -1,8 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { InvoiceFormComponent } from '../invoice-form/invoice-form.component';
-import { Item, Quantity, Discount, Surcharge } from '../../interfaces';
-import { FormBuilder, FormGroup } from '@angular/forms';
-
+import { Item, Quantity, Discount, Surcharge, Cost } from '../../interfaces';
 
 export interface PeriodicElement {
   quantity: any;
@@ -13,11 +10,7 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {item: 1, quantity: 'Hydrogen', cost: 1, discount: 1.0079, surcharge: 'H'},
-  {item: 2, quantity: 'Helium', cost: 1, discount: 4.0026, surcharge: 'He'},
-  {item: 3, quantity: 'Lithium', cost: 1, discount: 6.941, surcharge: 'Li'},
-  {item: 4, quantity: 'Beryllium', cost: 1, discount: 9.0122, surcharge: 'Be'},
-  {item: 5, quantity: 'Boron', cost: 1, discount: 10.811, surcharge: 'B'}
+  {item: 1, quantity: 2, cost: 3, discount: 4, surcharge: 5},
 ];
 
 @Component({
@@ -27,13 +20,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class InvoiceTableComponent implements OnInit {
 
-  displayedColumns: string[] = ['item', 'quantity', 'discount', 'surcharge', 'cost'];
+  displayedColumns: any[] = ['item', 'quantity', 'discount', 'surcharge', 'cost'];
   dataSource = ELEMENT_DATA;
 
   public items: Item[] = [
-    { value: 'items-1', label: 'Items1' },
-    { value: 'items-2', label: 'Items2' },
-    { value: 'items-3', label: 'Items3' }
+    { value: '1', label: 'Items1' },
+    { value: '2', label: 'Items2' },
+    { value: '3', label: 'Items3' }
   ];
   public quantities: Quantity[] = [
     { value: '1', label: '1' },
@@ -51,7 +44,14 @@ export class InvoiceTableComponent implements OnInit {
     { value: '3', label: '3' }
   ];
 
-  constructor( private invoiceForm: InvoiceFormComponent ) { }
+  addItem() {
+    if (this.dataSource) {
+      console.log('Waka');
+      this.dataSource.push( {item: 1, quantity: 2, cost: 3, discount: 4, surcharge: 5}, );
+    }
+  }
+
+  constructor( ) { }
 
   ngOnInit() {
   }
