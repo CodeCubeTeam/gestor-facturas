@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { getMatInputUnsupportedTypeError } from '@angular/material';
 
 @Component({
   selector: 'app-form-user-data',
@@ -12,6 +13,11 @@ export class FormUserDataComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  visible(addno) {
+    addno = false;
+    console.log(addno);
   }
 
 }

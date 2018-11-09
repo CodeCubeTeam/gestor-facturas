@@ -19,6 +19,7 @@ button{
   border: none;
   padding: 1em;
   color: #FFF;
+  margin: 0 0.5em;
 }
 button:hover{
   text-decoration: none;

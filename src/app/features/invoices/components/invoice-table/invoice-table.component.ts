@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Item, Quantity, Discount, Surcharge, Cost } from '../../interfaces';
+import { CustomMatTableDataSource } from './../../../../shared-global/class/custom-mat-table-data-source';
 
 export interface PeriodicElement {
   quantity: any;
@@ -10,7 +11,13 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {item: 1, quantity: 2, cost: 3, discount: 4, surcharge: 5},
+  {
+    item: { value: 0, label: '' },
+    quantity: { value: 0, label: '' },
+    cost: { value: 0, label: '' },
+    discount: { value: 0, label: '' },
+    surcharge: { value: 0, label: '' }
+  }
 ];
 
 @Component({
@@ -19,9 +26,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./invoice-table.component.css']
 })
 export class InvoiceTableComponent implements OnInit {
-
-  displayedColumns: any[] = ['item', 'quantity', 'discount', 'surcharge', 'cost'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: any[] = [
+    'item',
+    'quantity',
+    'discount',
+    'surcharge',
+    'cost'
+  ];
+  myDataSource = new CustomMatTableDataSource();
 
   public items: Item[] = [
     { value: '1', label: 'Items1' },
@@ -45,14 +57,24 @@ export class InvoiceTableComponent implements OnInit {
   ];
 
   addItem() {
-    if (this.dataSource) {
-      console.log('Waka');
-      this.dataSource.push( {item: 1, quantity: 2, cost: 3, discount: 4, surcharge: 5}, );
+    if (this.myDataSource) {
+      this.myDataSource.addRow(
+        {
+            item: { value: 0, label: '' },
+            quantity: { value: 0, label: '' },
+            cost: { value: 0, label: '' },
+            discount: { value: 0, label: '' },
+            surcharge: { value: 0, label: '' }
+      });
     }
   }
+  removeItem() {
+    this.myDataSource.removeRow();
+  }
 
-  constructor( ) { }
+  constructor() {}
 
   ngOnInit() {
+    this.addItem();
   }
 }

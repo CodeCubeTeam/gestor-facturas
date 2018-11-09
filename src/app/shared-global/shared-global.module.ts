@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { FormClientDataComponent } from './components/form-client-data/form-client-data.component';
 import { FormUserDataComponent } from './components/form-user-data/form-user-data.component';
 import { SharedCoreModule } from '../shared-core/shared-core.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
 
 @NgModule({
-  imports: [SharedCoreModule, ReactiveFormsModule],
+  imports: [SharedCoreModule, ReactiveFormsModule, FormsModule ],
   declarations: [
     FormUserDataComponent,
     FormClientDataComponent
@@ -13,7 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   exports: [
     FormUserDataComponent,
     FormClientDataComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class SharedGlobalModule { }

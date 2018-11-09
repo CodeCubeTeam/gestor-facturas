@@ -17,7 +17,18 @@ mat-card{
   display: flex;
   align-items: center;
 }
-
+.inputs-edit mat-form-field{
+  width: 100%;
+}
+.img-head{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0.5em;
+}
+.img-head a{
+  margin-top: 1em;
+}
 @media (max-width: 768px){
   .cards{
     display: block;
@@ -25,6 +36,12 @@ mat-card{
   mat-card{
     width: auto;
     margin: 0.5em;
+  }
+}
+@media (max-width: 1024px){
+  mat-card{
+    width: 100%;
+    margin: 0;
   }
 }
 @media (max-width: 425px){

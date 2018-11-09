@@ -1,13 +1,13 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<table mat-table [dataSource]="myDataSource" class="mat-elevation-z8">
 
   <!-- Position Column -->
   <ng-container matColumnDef="item">
     <th mat-header-cell *matHeaderCellDef> Item </th>
-    <td mat-cell *matCellDef="let element">
+    <td mat-cell *matCellDef="let element; let i = index">
       <mat-form-field>
-        <mat-select placeholder="Select item">
-          <mat-option *ngFor="let item of items" [value]="item.value">
-            {{item.label}}
+        <mat-select [(ngModel)]="element.item" placeholder="Select item">
+          <mat-option *ngFor="let item of items" [value]="item">
+            {{item?.label}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -17,11 +17,11 @@
   <!-- Quantity Column -->
   <ng-container matColumnDef="quantity">
     <th mat-header-cell *matHeaderCellDef> Quantity </th>
-    <td mat-cell *matCellDef="let element">
+    <td mat-cell *matCellDef="let element; let i = index">
       <mat-form-field>
-        <mat-select placeholder="Select quantity">
-          <mat-option *ngFor="let quantity of quantities" [value]="quantity.value">
-            {{quantity.label}}
+        <mat-select [(ngModel)]="element.quantity" placeholder="Select quantity">
+          <mat-option *ngFor="let quantity of quantities" [value]="quantity">
+            {{quantity?.label}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -31,11 +31,11 @@
   <!-- discount Column -->
   <ng-container matColumnDef="discount">
     <th mat-header-cell *matHeaderCellDef> Discount </th>
-    <td mat-cell *matCellDef="let element">
+    <td mat-cell *matCellDef="let element; let i = index">
       <mat-form-field>
-        <mat-select placeholder="Select discount">
-          <mat-option *ngFor="let discount of discounts" [value]="discount.value">
-            {{discount.label}}
+        <mat-select [(ngModel)]="element.discount" placeholder="Select discount">
+          <mat-option *ngFor="let discount of discounts" [value]="discount">
+            {{discount?.label}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -45,11 +45,11 @@
   <!-- surcharge Column -->
   <ng-container matColumnDef="surcharge">
     <th mat-header-cell *matHeaderCellDef> Surcharge </th>
-    <td mat-cell *matCellDef="let element">
+    <td mat-cell *matCellDef="let element; let i = index">
       <mat-form-field>
-        <mat-select placeholder="Select surcharge">
-          <mat-option *ngFor="let surcharge of surcharges" [value]="surcharge.value">
-            {{surcharge.label}}
+        <mat-select [(ngModel)]="element.surcharge" placeholder="Select surcharge">
+          <mat-option *ngFor="let surcharge of surcharges" [value]="surcharge">
+            {{surcharge?.label}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -59,13 +59,15 @@
   <!-- Cost Column -->
   <ng-container matColumnDef="cost">
     <th mat-header-cell *matHeaderCellDef> Cost </th>
-    <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
+    <td mat-cell *matCellDef="let element; let i = index"> {{element.cost?.label}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr mat-row *matRowDef="let element; columns: displayedColumns;"></tr>
 </table>
 <mat-grid-list cols="1" rowHeight="4:1" class="b-more">
   <button class="btn btn-primary" href="javascript:void(0)" (click)="addItem()"><i class="fa fa-plus-circle"></i> ADD
     NEW ITEM</button>
+  <button class="btn btn-primary" href="javascript:void(0)" (click)="removeItem()"><i class="fa fa-plus-circle"></i>
+    REMOVE ITEM</button>
 </mat-grid-list>
