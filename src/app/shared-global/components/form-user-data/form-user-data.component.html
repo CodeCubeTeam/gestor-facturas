@@ -1,38 +1,79 @@
 <div class="cards">
-  <mat-card *ngFor="let card of cards">
-    <mat-card-header>
-      <div class="img-head">
-        <img mat-card-avatar src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png"
-          width="150px">
-        <a href="javascript:void(0)" (click)="visible()">Edit info</a>
-      </div>
-      <div class="info-head">
-        <mat-card-title>Titulo</mat-card-title>
+  <div class="mycard">
+    <mat-card>
+      <mat-card-header>
+        <div class="img-head">
+          <img mat-card-avatar src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png"
+            width="150px">
+          <a href="javascript:void(0)" (click)="edit_myinfo = !edit_myinfo">Edit info</a>
+        </div>
+        <div class="info-head">
+          <mat-card-title>Titulo</mat-card-title>
 
 
-        <mat-card-subtitle>
-          <ul #addno>
-            <li>Lorem ipsum</li>
-            <li>Lorem ipsum</li>
-            <li>Lorem ipsum</li>
-            <li>Lorem ipsum</li>
-          </ul>
-          <div class="inputs-edit">
-            <mat-form-field>
-              <input matInput placeholder="Input">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput placeholder="Input">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput placeholder="Input">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput placeholder="Input">
-            </mat-form-field>
-          </div>
-        </mat-card-subtitle>
-      </div>
-    </mat-card-header>
-  </mat-card>
+          <mat-card-subtitle>
+            <ul *ngIf="!edit_myinfo">
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+            </ul>
+            <a href="javascript:void(0)" (click)="Seeinf()">Hurray</a>
+            <div *ngIf="edit_myinfo" [formGroup]="My_info">
+              <mat-form-field>
+                <input matInput placeholder="My name" formControlName="My_name">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="My corporate name" formControlName="My_corporate_name">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="My corporate address" formControlName="My_corporate_address">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="My corporate phone" formControlName="My_corporate_phone">
+              </mat-form-field>
+            </div>
+          </mat-card-subtitle>
+        </div>
+      </mat-card-header>
+    </mat-card>
+  </div>
+  <div class="cardclient">
+    <mat-card>
+      <mat-card-header>
+        <div class="img-head">
+          <img mat-card-avatar src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png"
+            width="150px">
+          <a href="javascript:void(0)" (click)="edit_client = !edit_client">Edit info</a>
+        </div>
+        <div class="info-head">
+          <mat-card-title>Titulo</mat-card-title>
+
+
+          <mat-card-subtitle>
+            <ul *ngIf="!edit_client">
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+              <li>Lorem ipsum</li>
+            </ul>
+            <div class="inputs-edit" *ngIf="edit_client">
+              <mat-form-field>
+                <input matInput placeholder="Client name" formControlName="Name">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Corporate name" formControlName="Corporate">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Corporate address" formControlName="Address">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Corporate phone" formControlName="Phone">
+              </mat-form-field>
+            </div>
+          </mat-card-subtitle>
+        </div>
+      </mat-card-header>
+    </mat-card>
+  </div>
 </div>

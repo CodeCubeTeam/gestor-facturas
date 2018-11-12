@@ -1,7 +1,7 @@
 .cards{
   display: flex;
 }
-mat-card{
+.mycard, .cardclient{
   width: 100%;
   margin: 0.5em;
 }
@@ -29,18 +29,21 @@ mat-card{
 .img-head a{
   margin-top: 1em;
 }
+@media (max-width: 1024px){
+  .cards{
+    flex-direction: column;
+  }
+  mat-card{
+    width: 92%;
+    margin: 0;
+  }
+}
 @media (max-width: 768px){
   .cards{
     display: block;
   }
   mat-card{
-    width: auto;
-    margin: 0.5em;
-  }
-}
-@media (max-width: 1024px){
-  mat-card{
-    width: 100%;
+    width: 90%;
     margin: 0;
   }
 }
